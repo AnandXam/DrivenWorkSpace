@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="DrivenSample.CustomViews.TitleView">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ProfileImageStyle" TargetType="Image">
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="WidthRequest" Value="40" />
+                <Setter Property="Margin" Value="10,0,0,0" />
+            </Style>
+
+            <Style x:Key="LogoStyle" TargetType="Image">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="40" />
+            </Style>
+            
+            <Style x:Key="NumberPlateStyle" TargetType="Image">
+                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="Margin" Value="0,0,10,0" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content >
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="Start" Margin="0,5,0,0"
+              BackgroundColor="Transparent">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <ffimageloading:CachedImage  Source="User.png" Grid.Column="0" Style="{StaticResource ProfileImageStyle}">
+                <ffimageloading:CachedImage.Clip>
+                    <EllipseGeometry
+                Center="20,20"
+                RadiusX="20"
+                RadiusY="20"/>
+                </ffimageloading:CachedImage.Clip>
+                <ffimageloading:CachedImage.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ProfileImageTapCommand}"></TapGestureRecognizer>
+                </ffimageloading:CachedImage.GestureRecognizers>
+            </ffimageloading:CachedImage>
+            <Image Source="Logo.png" Grid.Column="1" Style="{StaticResource LogoStyle}"/>
+            <Image Source="image4.png" Grid.Column="2" Style="{StaticResource NumberPlateStyle}" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TexasTapCommand}"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+  </ContentView.Content>
+</ContentView>
