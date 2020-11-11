@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="DrivenSample.CustomViews.ChatCardView">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ProfileImageStyle" TargetType="Image">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="WidthRequest" Value="50" />
+            </Style>
+
+            <Style x:Key="ChatNameAndDateStyle" TargetType="Label">
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="TextColor" Value="#6B7682" />
+            </Style>
+
+            <Style x:Key="ChatMessageStyle" TargetType="Label">
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="TextColor" Value="#AEB4BA" />
+            </Style>
+
+            <Style x:Key="OnlineIndicatorStyle" TargetType="Frame">
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="BackgroundColor" Value="PaleVioletRed" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="HeightRequest" Value="10" />
+                <Setter Property="WidthRequest" Value="10" />
+            </Style>
+
+            <Style x:Key="OuterFrameStyle" TargetType="Frame">
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="BackgroundColor" Value="#1E2E42" />
+                <Setter Property="Margin" Value="10" />
+                <Setter Property="CornerRadius" Value="7" />
+                <Setter Property="HeightRequest" Value="60" />
+            </Style>
+
+
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Frame  Style="{StaticResource OuterFrameStyle}">
+            <Grid  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="8*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand">
+
+                    <Image Source="icon_car.jpg" 
+                        Style="{StaticResource ProfileImageStyle}">
+                        <Image.Clip>
+                            <EllipseGeometry
+                            Center="25,25"
+                            RadiusX="25"
+                            RadiusY="25"/>
+                        </Image.Clip>
+                    </Image>
+                </StackLayout>
+
+                <Grid Grid.Column="1" HorizontalOptions="FillAndExpand" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" HorizontalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="0" Orientation="Horizontal">
+                            <Frame Style="{StaticResource OnlineIndicatorStyle}"/>
+                            <Label Text="Ricky Jameson"  Style="{StaticResource ChatNameAndDateStyle}"></Label>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1" >
+                            <Label VerticalOptions="Center" Style="{StaticResource ChatNameAndDateStyle}">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="•  " />
+                                        <Span Text="Sep 3 2020" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>  
+                    </Grid>
+                    <StackLayout HorizontalOptions="FillAndExpand" Grid.Row="1" VerticalOptions="FillAndExpand">
+                        <Label Text="Nice build man! can't wait to hear it with  cams!"       
+                               Style="{StaticResource ChatMessageStyle}"
+                               ></Label>
+                    </StackLayout>
+                </Grid>
+            </Grid>
+            
+        </Frame>
+  </ContentView.Content>
+</ContentView>

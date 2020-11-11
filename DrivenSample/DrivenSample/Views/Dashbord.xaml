@@ -10,5 +10,26 @@
     
     <ContentPage.Content>
 
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></StackLayout>
+     
+            
+            <Grid Grid.Row="1" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <View:ChatViewTitle Grid.Row="0" ></View:ChatViewTitle>
+                <View:ChatCardView Grid.Row="1" ></View:ChatCardView>
+            </Grid>
+            
+            
+            
+        </Grid>
+
     </ContentPage.Content>
 </ContentPage>

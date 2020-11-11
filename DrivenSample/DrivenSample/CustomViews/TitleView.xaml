@@ -36,17 +36,17 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <ffimageloading:CachedImage  Source="User.png" Grid.Column="0" Style="{StaticResource ProfileImageStyle}">
-                <ffimageloading:CachedImage.Clip>
+            <Image Source="User.png" Grid.Column="0" Style="{StaticResource ProfileImageStyle}">
+                <Image.Clip>
                     <EllipseGeometry
                 Center="20,20"
                 RadiusX="20"
                 RadiusY="20"/>
-                </ffimageloading:CachedImage.Clip>
-                <ffimageloading:CachedImage.GestureRecognizers>
+                </Image.Clip>
+                <Image.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ProfileImageTapCommand}"></TapGestureRecognizer>
-                </ffimageloading:CachedImage.GestureRecognizers>
-            </ffimageloading:CachedImage>
+                </Image.GestureRecognizers>
+            </Image>
             <Image Source="Logo.png" Grid.Column="1" Style="{StaticResource LogoStyle}"/>
             <Image Source="image4.png" Grid.Column="2" Style="{StaticResource NumberPlateStyle}" >
                 <Image.GestureRecognizers>
