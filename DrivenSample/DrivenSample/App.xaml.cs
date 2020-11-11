@@ -10,7 +10,7 @@ namespace DrivenSample
         public App()
         {
             InitializeComponent();
-
+            Device.SetFlags(new string[] { "Shapes_Experimental" });
             MainPage = new NavigationPage(new Dashbord());
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#0D1017");
 

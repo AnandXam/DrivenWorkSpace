@@ -24,12 +24,10 @@
                 <Setter Property="TextColor" Value="#AEB4BA" />
             </Style>
 
-            <Style x:Key="OnlineIndicatorStyle" TargetType="Frame">
+            <Style x:Key="OnlineIndicatorStyle" TargetType="Ellipse">
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="BackgroundColor" Value="PaleVioletRed" />
-                <Setter Property="Padding" Value="0" />
-                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="Fill" Value="PaleVioletRed" />
                 <Setter Property="HeightRequest" Value="10" />
                 <Setter Property="WidthRequest" Value="10" />
             </Style>
@@ -78,7 +76,8 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <StackLayout Grid.Column="0" Orientation="Horizontal">
-                            <Frame Style="{StaticResource OnlineIndicatorStyle}"/>
+                            <!--<Frame Style="{StaticResource OnlineIndicatorStyle}"/>-->
+                            <Ellipse Style="{StaticResource OnlineIndicatorStyle}"/>
                             <Label Text="Ricky Jameson"  Style="{StaticResource ChatNameAndDateStyle}"></Label>
                         </StackLayout>
                         <StackLayout Grid.Column="1" >
